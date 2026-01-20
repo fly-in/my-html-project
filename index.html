@@ -605,25 +605,25 @@
         <div class="controls">
             <div class="filter-group">
                 <label>学年：</label>
-                <select>
+                <select id="yearSelect">
+                    <option>2025-2026</option>
                     <option>2024-2025</option>
                     <option>2023-2024</option>
-                    <option>2022-2023</option>
                 </select>
                 
                 <label>学期：</label>
-                <select>
-                    <option>2</option>
+                <select id="semesterSelect">
                     <option>1</option>
+                    <option>2</option>
                 </select>
                 
-                <button><i class="fas fa-search"></i> 查询</button>
+                <button onclick="filterTable()"><i class="fas fa-search"></i> 查询</button>
             </div>
             
             <button class="export-btn" onclick="exportTableToExcel()"><i class="fas fa-download"></i> 导出成绩表</button>
         </div>
         
-        <table>
+        <table id="scoreTable">
             <thead>
                 <tr>
                     <th>学年</th>
@@ -636,32 +636,41 @@
                     <th>绩点</th>
                     <th>成绩性质</th>
                     <th>是否学位课程</th>
+                    <th>开课学院</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr><td>2024-2025</td><td>2</td><td>S0803491</td><td>综合创新实践1</td><td>实践必修</td><td>1.0</td><td>87</td><td>4.2</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A0802060</td><td>随机信号原理</td><td>专业必修</td><td>2.0</td><td>74</td><td>3.5</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>C0803530</td><td>Linux操作系统</td><td>专业选修</td><td>2.0</td><td>65</td><td>2.0</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A0803180</td><td>离散数学及应用</td><td>专业必修</td><td>2.0</td><td>80</td><td>3.5</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A2301120</td><td>习近平新时代中国特色社会主义思想概论</td><td>通识必修</td><td>3.0</td><td>83</td><td>3.8</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A0803020</td><td>数学物理方法</td><td>专业必修</td><td>3.0</td><td>83</td><td>3.8</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A1102080</td><td>跨文化交际</td><td>通识必修</td><td>2.0</td><td>83</td><td>3.8</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A080626s</td><td>信号与系统</td><td>学科必修</td><td>3.0</td><td>66</td><td>1.5</td><td>补考一</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A8400012</td><td>大学生职业发展与就业指导2</td><td>通识必修</td><td>0.5</td><td>84</td><td>3.9</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A0801220</td><td>信息论与编码</td><td>专业必修</td><td>2.0</td><td>74</td><td>3.8</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>C0800430</td><td>电子设计</td><td>专业选修</td><td>2.0</td><td>64</td><td>1.9</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>C0399022</td><td>创业运营仿真</td><td>通识选修</td><td>1.0</td><td>87</td><td>4.2</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>S0403780</td><td>通信电路实验（硬件）</td><td>实践必修</td><td>0.5</td><td>64</td><td>1.9</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A6500044</td><td>形势与政策4</td><td>通识必修</td><td>0.25</td><td>优秀</td><td>5.0</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>C1200740</td><td>电信法律法规</td><td>专业选修</td><td>1.0</td><td>94</td><td>4.9</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A0801110</td><td>通信电路</td><td>学科必修</td><td>3.0</td><td>83</td><td>4.2</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>A8400014</td><td>大学生职业发展与就业指导4</td><td>通识必修</td><td>0.5</td><td>95</td><td>5.0</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>S0802830</td><td>通信电路实验（软件）</td><td>实践必修</td><td>0.5</td><td>87</td><td>4.2</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2024-2025</td><td>2</td><td>T1300020</td><td>体育-羽毛球(男)</td><td>通识必修</td><td>1.0</td><td>66</td><td>2.1</td><td>正常考试</td><td>否</td></tr>
+            <tbody id="scoreTableBody">
+                <!-- 2025-2026学年第一学期成绩 -->
+                <tr data-year="2025-2026" data-semester="1">
+                    <td>2025-2026</td>
+                    <td>1</td>
+                    <td>S0803640</td>
+                    <td>嵌入式系统课程设计</td>
+                    <td>专业选修</td>
+                    <td>1.0</td>
+                    <td>86</td>
+                    <td>4.10</td>
+                    <td>正常考试</td>
+                    <td>否</td>
+                    <td>通信工程学院</td>
+                </tr>
+                <tr data-year="2025-2026" data-semester="1">
+                    <td>2025-2026</td>
+                    <td>1</td>
+                    <td>S0802130</td>
+                    <td>数字信号处理实验</td>
+                    <td>实践必修</td>
+                    <td>1.0</td>
+                    <td>83</td>
+                    <td>3.8</td>
+                    <td>正常考试</td>
+                    <td>否</td>
+                    <td>通信工程学院</td>
+                </tr>
             </tbody>
         </table>
         
-        <div class="footer">共 19 条记录 · 杭州电子科技大学教务处提供</div>
+        <div class="footer" id="recordCount">共 2 条记录 · 杭州电子科技大学教务处提供</div>
     </div>
 
     <script>
@@ -678,6 +687,7 @@
                 // 登录成功，显示成绩查询页面
                 document.getElementById('loginContainer').style.display = 'none';
                 document.getElementById('scoreContainer').style.display = 'block';
+                updateRecordCount();
             } else {
                 // 登录失败，显示错误信息
                 errorMessage.textContent = '学号或密码错误，请重新输入';
@@ -713,7 +723,37 @@
             XLSX.writeFile(wb, "周昊阳_成绩表.xlsx");
         }
         
+        // 更新记录数量
+        function updateRecordCount() {
+            const visibleRows = document.querySelectorAll('#scoreTableBody tr:not([style*="display: none"])').length;
+            document.getElementById('recordCount').textContent = `共 ${visibleRows} 条记录 · 杭州电子科技大学教务处提供`;
+        }
         
+        // 筛选表格数据
+        function filterTable() {
+            const selectedYear = document.getElementById('yearSelect').value;
+            const selectedSemester = document.getElementById('semesterSelect').value;
+            const rows = document.querySelectorAll('#scoreTableBody tr');
+            
+            rows.forEach(row => {
+                const year = row.getAttribute('data-year');
+                const semester = row.getAttribute('data-semester');
+                
+                if (year === selectedYear && semester === selectedSemester) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            
+            updateRecordCount();
+        }
+        
+        // 页面加载时自动填充测试账号
+        window.onload = function() {
+            document.getElementById('username').value = '23080420';
+            document.getElementById('password').value = 'Momomom@12';
+        }
     </script>
 </body>
 </html>
