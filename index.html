@@ -605,25 +605,25 @@
         <div class="controls">
             <div class="filter-group">
                 <label>学年：</label>
-                <select id="yearSelect">
+                <select>
                     <option>2025-2026</option>
                     <option>2024-2025</option>
                     <option>2023-2024</option>
                 </select>
                 
                 <label>学期：</label>
-                <select id="semesterSelect">
+                <select>
                     <option>1</option>
                     <option>2</option>
                 </select>
                 
-                <button onclick="filterTable()"><i class="fas fa-search"></i> 查询</button>
+                <button><i class="fas fa-search"></i> 查询</button>
             </div>
             
             <button class="export-btn" onclick="exportTableToExcel()"><i class="fas fa-download"></i> 导出成绩表</button>
         </div>
         
-        <table id="scoreTable">
+        <table>
             <thead>
                 <tr>
                     <th>学年</th>
@@ -632,45 +632,30 @@
                     <th>课程名称</th>
                     <th>课程性质</th>
                     <th>学分</th>
+                    <th>期末成绩</th>
                     <th>成绩</th>
-                    <th>绩点</th>
                     <th>成绩性质</th>
                     <th>是否学位课程</th>
-                    <th>开课学院</th>
                 </tr>
             </thead>
-            <tbody id="scoreTableBody">
-                <!-- 2025-2026学年第一学期成绩 -->
-                <tr data-year="2025-2026" data-semester="1">
-                    <td>2025-2026</td>
-                    <td>1</td>
-                    <td>S0803640</td>
-                    <td>嵌入式系统课程设计</td>
-                    <td>专业选修</td>
-                    <td>1.0</td>
-                    <td>86</td>
-                    <td>4.10</td>
-                    <td>正常考试</td>
-                    <td>否</td>
-                    <td>通信工程学院</td>
-                </tr>
-                <tr data-year="2025-2026" data-semester="1">
-                    <td>2025-2026</td>
-                    <td>1</td>
-                    <td>S0802130</td>
-                    <td>数字信号处理实验</td>
-                    <td>实践必修</td>
-                    <td>1.0</td>
-                    <td>83</td>
-                    <td>3.8</td>
-                    <td>正常考试</td>
-                    <td>否</td>
-                    <td>通信工程学院</td>
-                </tr>
+            <tbody>
+                <tr><td>2025-2026</td><td>1</td><td>A0801920</td><td>通信原理（甲）</td><td>学科必修</td><td>4.0</td><td>70</td><td>75</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>S0803640</td><td>嵌入式系统课程设计</td><td>专业选修</td><td>1.0</td><td>87</td><td>86</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>S0802130</td><td>数字信号处理实验</td><td>实践必修</td><td>1.0</td><td>80</td><td>85</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>B0806100</td><td>嵌入式系统</td><td>专业选修</td><td>2.0</td><td>73</td><td>75</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>S0801620</td><td>通信原理实验</td><td>实践必修</td><td>1.0</td><td>87</td><td>89</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>A0802330</td><td>电磁场与电磁波</td><td>学科必修</td><td>3.0</td><td>72</td><td>77</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>A0801110</td><td>通信电路</td><td>学科必修</td><td>3.0</td><td>88</td><td>91</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>S0803492</td><td>综合创新实践2</td><td>实践必修</td><td>1.0</td><td>85</td><td>92</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>B080244s</td><td>计算机系统</td><td>专业选修</td><td>3.0</td><td>66</td><td>71</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>A6500045</td><td>形势与政策5</td><td>通识必修</td><td>0.25</td><td>89</td><td>优秀</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>A0802040</td><td>数字信号处理</td><td>学科必修</td><td>3.0</td><td>70</td><td>75</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>C0399026</td><td>高级创业运营仿真</td><td>通识选修</td><td>1.0</td><td>79</td><td>86</td><td>正常考试</td><td>否</td></tr>
+                <tr><td>2025-2026</td><td>1</td><td>A2301240</td><td>马克思主义基本原理</td><td>通识必修</td><td>3.0</td><td>78</td><td>82</td><td>正常考试</td><td>否</td></tr>
             </tbody>
         </table>
         
-        <div class="footer" id="recordCount">共 2 条记录 · 杭州电子科技大学教务处提供</div>
+        <div class="footer">共 13 条记录 · 杭州电子科技大学教务处提供</div>
     </div>
 
     <script>
@@ -687,7 +672,6 @@
                 // 登录成功，显示成绩查询页面
                 document.getElementById('loginContainer').style.display = 'none';
                 document.getElementById('scoreContainer').style.display = 'block';
-                updateRecordCount();
             } else {
                 // 登录失败，显示错误信息
                 errorMessage.textContent = '学号或密码错误，请重新输入';
@@ -721,32 +705,6 @@
             var ws = XLSX.utils.table_to_sheet(table);
             XLSX.utils.book_append_sheet(wb, ws, "成绩表");
             XLSX.writeFile(wb, "周昊阳_成绩表.xlsx");
-        }
-        
-        // 更新记录数量
-        function updateRecordCount() {
-            const visibleRows = document.querySelectorAll('#scoreTableBody tr:not([style*="display: none"])').length;
-            document.getElementById('recordCount').textContent = `共 ${visibleRows} 条记录 · 杭州电子科技大学教务处提供`;
-        }
-        
-        // 筛选表格数据
-        function filterTable() {
-            const selectedYear = document.getElementById('yearSelect').value;
-            const selectedSemester = document.getElementById('semesterSelect').value;
-            const rows = document.querySelectorAll('#scoreTableBody tr');
-            
-            rows.forEach(row => {
-                const year = row.getAttribute('data-year');
-                const semester = row.getAttribute('data-semester');
-                
-                if (year === selectedYear && semester === selectedSemester) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-            
-            updateRecordCount();
         }
         
         // 页面加载时自动填充测试账号
