@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>杭州电子科技大学 - 学生成绩管理系统</title>
+    <title>杭州电子科技大学 · 学生成绩管理系统</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
@@ -13,7 +13,6 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
-        
         body {
             background: linear-gradient(135deg, #1a2980, #26d0ce);
             min-height: 100vh;
@@ -22,8 +21,6 @@
             align-items: center;
             padding: 20px;
         }
-        
-        /* 登录页面样式 */
         #loginContainer {
             display: flex;
             max-width: 1200px;
@@ -33,7 +30,6 @@
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
         }
-        
         .banner {
             flex: 1;
             background: linear-gradient(rgba(0, 56, 101, 0.7), rgba(0, 56, 101, 0.7)), 
@@ -45,32 +41,27 @@
             justify-content: center;
             position: relative;
         }
-        
         .banner h1 {
             font-size: 2.8rem;
             margin-bottom: 15px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-        
         .banner p {
             font-size: 1.1rem;
             line-height: 1.6;
             max-width: 500px;
         }
-        
         .login-container {
             flex: 1;
             padding: 60px 50px;
             display: flex;
             flex-direction: column;
         }
-        
         .header {
             display: flex;
             align-items: center;
             margin-bottom: 40px;
         }
-        
         .logo {
             width: 60px;
             height: 60px;
@@ -81,38 +72,31 @@
             justify-content: center;
             margin-right: 15px;
         }
-        
         .logo i {
             font-size: 32px;
             color: white;
         }
-        
         .site-name {
             font-size: 1.8rem;
             font-weight: 700;
             color: #1a2980;
         }
-        
         .site-name span {
             color: #26d0ce;
         }
-        
         .login-form h2 {
             font-size: 2rem;
             margin-bottom: 10px;
             color: #333;
         }
-        
         .login-form p {
             color: #666;
             margin-bottom: 30px;
         }
-        
         .input-group {
             margin-bottom: 25px;
             position: relative;
         }
-        
         .input-group i {
             position: absolute;
             left: 15px;
@@ -120,7 +104,6 @@
             transform: translateY(-50%);
             color: #777;
         }
-        
         .input-group input {
             width: 100%;
             padding: 15px 15px 15px 45px;
@@ -129,40 +112,33 @@
             font-size: 16px;
             transition: all 0.3s;
         }
-        
         .input-group input:focus {
             border-color: #26d0ce;
             box-shadow: 0 0 0 3px rgba(38, 208, 206, 0.2);
             outline: none;
         }
-        
         .options {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 30px;
         }
-        
         .remember {
             display: flex;
             align-items: center;
         }
-        
         .remember input {
             margin-right: 8px;
         }
-        
         .forgot-password {
             color: #26d0ce;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
         .forgot-password:hover {
             color: #1a2980;
         }
-        
         .login-btn {
             width: 100%;
             padding: 15px;
@@ -176,23 +152,19 @@
             transition: transform 0.3s, box-shadow 0.3s;
             margin-bottom: 25px;
         }
-        
         .login-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(38, 208, 206, 0.4);
         }
-        
         .social-login {
             text-align: center;
             margin-bottom: 30px;
         }
-        
         .social-login p {
             position: relative;
             color: #777;
             margin-bottom: 20px;
         }
-        
         .social-login p::before,
         .social-login p::after {
             content: "";
@@ -202,21 +174,17 @@
             height: 1px;
             background: #ddd;
         }
-        
         .social-login p::before {
             left: 0;
         }
-        
         .social-login p::after {
             right: 0;
         }
-        
         .social-icons {
             display: flex;
             justify-content: center;
             gap: 15px;
         }
-        
         .social-icon {
             width: 45px;
             height: 45px;
@@ -229,27 +197,22 @@
             font-size: 18px;
             transition: all 0.3s;
         }
-        
         .social-icon:hover {
             background: #f5f5f5;
             transform: translateY(-3px);
         }
-        
         .signup-link {
             text-align: center;
             color: #666;
         }
-        
         .signup-link a {
             color: #1a2980;
             font-weight: 600;
             text-decoration: none;
         }
-        
         .signup-link a:hover {
             text-decoration: underline;
         }
-        
         .university-name {
             position: absolute;
             bottom: 40px;
@@ -257,7 +220,6 @@
             font-size: 1.4rem;
             font-weight: 700;
         }
-        
         .copyright {
             position: absolute;
             bottom: 20px;
@@ -267,7 +229,6 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
         }
-        
         .error-message {
             color: #e74c3c;
             font-size: 14px;
@@ -275,11 +236,9 @@
             text-align: center;
             height: 20px;
         }
-        
-        /* 成绩查询页面样式 */
         #scoreContainer {
             display: none;
-            max-width: 1200px;
+            max-width: 1400px;
             width: 100%;
             background: white;
             border-radius: 15px;
@@ -288,7 +247,6 @@
             flex-direction: column;
             padding: 30px;
         }
-        
         .score-header {
             display: flex;
             justify-content: space-between;
@@ -296,13 +254,12 @@
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
         }
-        
         .header-left {
             display: flex;
             align-items: center;
         }
-        
         .header-logo {
             width: 50px;
             height: 50px;
@@ -313,28 +270,24 @@
             justify-content: center;
             margin-right: 15px;
         }
-        
         .header-logo i {
             font-size: 24px;
             color: white;
         }
-        
         .header-title h1 {
             font-size: 1.8rem;
             color: #1a2980;
         }
-        
         .header-title p {
             color: #666;
             font-size: 0.9rem;
         }
-        
         .user-info {
             font-weight: bold;
             font-size: 1.1rem;
             color: #333;
+            margin: 10px 0;
         }
-        
         .logout-btn {
             background: linear-gradient(135deg, #1a2980, #26d0ce);
             border: none;
@@ -346,12 +299,10 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-        
         .logout-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(38, 208, 206, 0.4);
         }
-        
         .controls {
             margin: 20px 0;
             background: #f8f9fa;
@@ -362,19 +313,16 @@
             align-items: center;
             flex-wrap: wrap;
         }
-        
         .filter-group {
             display: flex;
             align-items: center;
             gap: 15px;
             flex-wrap: wrap;
         }
-        
         .filter-group label {
             font-weight: 500;
             color: #555;
         }
-        
         select, button {
             padding: 8px 15px;
             border: 1px solid #ddd;
@@ -382,43 +330,40 @@
             background: white;
             font-size: 14px;
         }
-        
         button {
             background: #1a2980;
             color: white;
             cursor: pointer;
             transition: background 0.3s;
         }
-        
         button:hover {
             background: #15236d;
         }
-        
         .export-btn {
             background: #26d0ce;
         }
-        
         .export-btn:hover {
             background: #1fb1af;
         }
-        
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.05);
+        }
         table {
             border-collapse: collapse;
             width: 100%;
-            margin: 20px 0;
             background: white;
-            box-shadow: 0 0 5px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
+            font-size: 14px;
+            min-width: 1000px;
         }
-        
         th, td {
             border: 1px solid #e0e0e0;
-            padding: 12px 15px;
+            padding: 10px 12px;
             text-align: center;
-            font-size: 14px;
+            white-space: nowrap;
         }
-        
         th {
             background-color: #1a2980;
             color: white;
@@ -426,15 +371,12 @@
             position: sticky;
             top: 0;
         }
-        
         tr:nth-child(even) {
             background-color: #f9f9f9;
         }
-        
         tr:hover {
             background-color: #f0f9ff;
         }
-        
         .footer {
             text-align: center;
             font-size: 14px;
@@ -443,78 +385,53 @@
             padding: 10px;
             border-top: 1px solid #eee;
         }
-        
-        /* 响应式设计 */
         @media (max-width: 900px) {
             #loginContainer {
                 flex-direction: column;
             }
-            
             .banner {
                 padding: 30px;
                 text-align: center;
                 align-items: center;
             }
-            
             .banner h1 {
                 font-size: 2.2rem;
             }
-            
             .university-name {
                 position: relative;
                 bottom: auto;
                 left: auto;
                 margin-top: 30px;
             }
-            
             .copyright {
                 position: relative;
                 margin-top: 20px;
             }
-            
             .score-header {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 15px;
             }
-            
             .controls {
                 flex-direction: column;
                 gap: 15px;
                 align-items: flex-start;
             }
-            
-            table {
-                font-size: 12px;
-            }
-            
-            th, td {
-                padding: 8px 10px;
-            }
         }
-        
         @media (max-width: 600px) {
             .login-container {
                 padding: 30px 20px;
             }
-            
             #scoreContainer {
                 padding: 20px 15px;
             }
-            
             .header-title h1 {
                 font-size: 1.5rem;
             }
-            
             .filter-group {
                 flex-direction: column;
                 align-items: flex-start;
                 width: 100%;
-            }
-            
-            table {
-                display: block;
-                overflow-x: auto;
             }
         }
     </style>
@@ -526,7 +443,7 @@
             <h1>欢迎来到学生成绩系统</h1>
             <p>杭州电子科技大学官方学生成绩查询平台，提供全面、准确、及时的成绩查询服务。</p>
             <div class="university-name">杭州电子科技大学</div>
-            <div class="copyright">© 2023 杭州电子科技大学 版权所有</div>
+            <div class="copyright">© 2026 杭州电子科技大学 版权所有</div>
         </div>
         
         <div class="login-container">
@@ -567,15 +484,9 @@
                 <div class="social-login">
                     <p>其他方式登录</p>
                     <div class="social-icons">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-weixin"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-qq"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-weibo"></i>
-                        </a>
+                        <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-qq"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-weibo"></i></a>
                     </div>
                 </div>
                 
@@ -605,113 +516,182 @@
         <div class="controls">
             <div class="filter-group">
                 <label>学年：</label>
-                <select>
-                    <option>2025-2026</option>
-                    <option>2024-2025</option>
-                    <option>2023-2024</option>
+                <select id="yearFilter">
+                    <option value="all">全部</option>
+                    <option value="2025-2026" selected>2025-2026</option>
                 </select>
                 
                 <label>学期：</label>
-                <select>
-                    <option>1</option>
-                    <option>2</option>
+                <select id="termFilter">
+                    <option value="all">全部</option>
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
                 </select>
                 
-                <button><i class="fas fa-search"></i> 查询</button>
+                <button onclick="applyFilter()"><i class="fas fa-search"></i> 查询</button>
             </div>
             
             <button class="export-btn" onclick="exportTableToExcel()"><i class="fas fa-download"></i> 导出成绩表</button>
         </div>
         
-        <table>
-            <thead>
-                <tr>
-                    <th>学年</th>
-                    <th>学期</th>
-                    <th>课程代码</th>
-                    <th>课程名称</th>
-                    <th>课程性质</th>
-                    <th>学分</th>
-                    <th>期末成绩</th>
-                    <th>成绩</th>
-                    <th>成绩性质</th>
-                    <th>是否学位课程</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>2025-2026</td><td>1</td><td>A0801920</td><td>通信原理（甲）</td><td>学科必修</td><td>4.0</td><td>70</td><td>75</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>S0803640</td><td>嵌入式系统课程设计</td><td>专业选修</td><td>1.0</td><td>87</td><td>86</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>S0802130</td><td>数字信号处理实验</td><td>实践必修</td><td>1.0</td><td>80</td><td>85</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>B0806100</td><td>嵌入式系统</td><td>专业选修</td><td>2.0</td><td>73</td><td>75</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>S0801620</td><td>通信原理实验</td><td>实践必修</td><td>1.0</td><td>87</td><td>89</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>A0802330</td><td>电磁场与电磁波</td><td>学科必修</td><td>3.0</td><td>72</td><td>77</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>A0801110</td><td>通信电路</td><td>学科必修</td><td>3.0</td><td>88</td><td>91</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>S0803492</td><td>综合创新实践2</td><td>实践必修</td><td>1.0</td><td>85</td><td>92</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>B080244s</td><td>计算机系统</td><td>专业选修</td><td>3.0</td><td>66</td><td>71</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>A6500045</td><td>形势与政策5</td><td>通识必修</td><td>0.25</td><td>89</td><td>优秀</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>A0802040</td><td>数字信号处理</td><td>学科必修</td><td>3.0</td><td>70</td><td>75</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>C0399026</td><td>高级创业运营仿真</td><td>通识选修</td><td>1.0</td><td>79</td><td>86</td><td>正常考试</td><td>否</td></tr>
-                <tr><td>2025-2026</td><td>1</td><td>A2301240</td><td>马克思主义基本原理</td><td>通识必修</td><td>3.0</td><td>78</td><td>82</td><td>正常考试</td><td>否</td></tr>
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table id="scoreTable">
+                <thead>
+                    <tr>
+                        <th>学年</th>
+                        <th>学期</th>
+                        <th>课程代码</th>
+                        <th>课程名称</th>
+                        <th>课程性质</th>
+                        <th>学分</th>
+                        <th>成绩</th>
+                        <th>绩点</th>
+                        <th>成绩性质</th>
+                        <th>是否学位课程</th>
+                        <th>开课学院</th>
+                        <th>任课教师</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- 由JS动态渲染 -->
+                </tbody>
+            </table>
+        </div>
         
-        <div class="footer">共 13 条记录 · 杭州电子科技大学教务处提供</div>
+        <div class="footer" id="recordCount">共 0 条记录 · 杭州电子科技大学教务处提供</div>
     </div>
 
     <script>
-        // 登录表单提交处理
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // 验证登录信息
-            if(username === '23080420' && password === 'Momomom@12') {
-                // 登录成功，显示成绩查询页面
-                document.getElementById('loginContainer').style.display = 'none';
-                document.getElementById('scoreContainer').style.display = 'block';
-            } else {
-                // 登录失败，显示错误信息
-                errorMessage.textContent = '学号或密码错误，请重新输入';
-                document.getElementById('password').value = '';
-                document.getElementById('password').focus();
-                
-                // 添加错误动画效果
-                document.getElementById('password').style.borderColor = '#e74c3c';
-                document.getElementById('password').style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.2)';
-                setTimeout(() => {
-                    document.getElementById('password').style.borderColor = '#ddd';
-                    document.getElementById('password').style.boxShadow = 'none';
-                }, 2000);
+        // ===== 双学期成绩数据，绩点统一保留两位小数 =====
+        // 第一学期 (2025-2026-1)
+        const semester1Data = [
+            { 学年: "2025-2026", 学期: "1", 课程代码: "A0801920", 课程名称: "通信原理（甲）", 课程性质: "学科必修", 学分: 4.0, 成绩: "75", 绩点: "2.50", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "李建" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "S0803640", 课程名称: "嵌入式系统课程设计", 课程性质: "专业选修", 学分: 1.0, 成绩: "86", 绩点: "3.60", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "张明" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "S0802130", 课程名称: "数字信号处理实验", 课程性质: "实践必修", 学分: 1.0, 成绩: "85", 绩点: "3.50", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "王丽" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "B0806100", 课程名称: "嵌入式系统", 课程性质: "专业选修", 学分: 2.0, 成绩: "75", 绩点: "2.50", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "赵岩" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "S0801620", 课程名称: "通信原理实验", 课程性质: "实践必修", 学分: 1.0, 成绩: "89", 绩点: "3.90", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "陈晨" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "A0802330", 课程名称: "电磁场与电磁波", 课程性质: "学科必修", 学分: 3.0, 成绩: "77", 绩点: "2.70", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "刘洋" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "A0801110", 课程名称: "通信电路", 课程性质: "学科必修", 学分: 3.0, 成绩: "91", 绩点: "4.10", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "孙莉" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "S0803492", 课程名称: "综合创新实践2", 课程性质: "实践必修", 学分: 1.0, 成绩: "92", 绩点: "4.20", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "周昊" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "B080244s", 课程名称: "计算机系统", 课程性质: "专业选修", 学分: 3.0, 成绩: "71", 绩点: "2.10", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "吴刚" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "A6500045", 课程名称: "形势与政策5", 课程性质: "通识必修", 学分: 0.25, 成绩: "优秀", 绩点: "4.50", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "马克思主义学院", 任课教师: "郑强" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "A0802040", 课程名称: "数字信号处理", 课程性质: "学科必修", 学分: 3.0, 成绩: "75", 绩点: "2.50", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "林峰" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "C0399026", 课程名称: "高级创业运营仿真", 课程性质: "通识选修", 学分: 1.0, 成绩: "86", 绩点: "3.60", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "管理学院", 任课教师: "黄欣" },
+            { 学年: "2025-2026", 学期: "1", 课程代码: "A2301240", 课程名称: "马克思主义基本原理", 课程性质: "通识必修", 学分: 3.0, 成绩: "82", 绩点: "3.20", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "马克思主义学院", 任课教师: "杨华" }
+        ];
+
+        // 第二学期 (2025-2026-2) 绩点统一保留两位小数
+        const semester2Data = [
+            { 学年: "2025-2026", 学期: "2", 课程代码: "S0803493", 课程名称: "综合创新实践3", 课程性质: "实践必修", 学分: 1.0, 成绩: "97", 绩点: "5.00", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "胡安中" },
+            { 学年: "2025-2026", 学期: "2", 课程代码: "S0802360", 课程名称: "移动通信实验", 课程性质: "实践必修", 学分: 1.0, 成绩: "良好", 绩点: "4.00", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "郑长亮" },
+            { 学年: "2025-2026", 学期: "2", 课程代码: "C0803400", 课程名称: "文献检索与科技写作", 课程性质: "通识选修", 学分: 1.0, 成绩: "84", 绩点: "3.90", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "吴俊" },
+            { 学年: "2025-2026", 学期: "2", 课程代码: "B080321s", 课程名称: "大数据分析基础", 课程性质: "专业选修", 学分: 3.0, 成绩: "75", 绩点: "3.40", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "耿秀琳" },
+            { 学年: "2025-2026", 学期: "2", 课程代码: "B0802420", 课程名称: "机器学习", 课程性质: "专业选修", 学分: 2.0, 成绩: "70", 绩点: "3.00", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "乔磊" },
+            { 学年: "2025-2026", 学期: "2", 课程代码: "B0801230", 课程名称: "移动通信", 课程性质: "专业选修", 学分: 3.0, 成绩: "84", 绩点: "3.90", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "通信工程学院", 任课教师: "郑长亮" },
+            { 学年: "2025-2026", 学期: "2", 课程代码: "A6500046", 课程名称: "形势与政策6", 课程性质: "通识必修", 学分: 0.25, 成绩: "良好", 绩点: "4.00", 成绩性质: "正常考试", 是否学位课程: "是", 开课学院: "马克思主义学院", 任课教师: "王琛" }
+        ];
+
+        // 合并全部数据
+        const allScoreData = [...semester1Data, ...semester2Data];
+
+        // 渲染表格
+        function renderTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            if (!data || data.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="12" style="text-align:center;color:#999;">暂无记录</td></tr>';
+                document.getElementById('recordCount').textContent = '共 0 条记录 · 杭州电子科技大学教务处提供';
+                return;
             }
-        });
-        
-        // 退出登录功能
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${item.学年}</td>
+                    <td>${item.学期}</td>
+                    <td>${item.课程代码}</td>
+                    <td>${item.课程名称}</td>
+                    <td>${item.课程性质}</td>
+                    <td>${item.学分}</td>
+                    <td>${item.成绩}</td>
+                    <td>${item.绩点}</td>
+                    <td>${item.成绩性质}</td>
+                    <td>${item.是否学位课程}</td>
+                    <td>${item.开课学院}</td>
+                    <td>${item.任课教师}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+            document.getElementById('recordCount').textContent = `共 ${data.length} 条记录 · 杭州电子科技大学教务处提供`;
+        }
+
+        // 筛选逻辑
+        function applyFilter() {
+            const yearVal = document.getElementById('yearFilter').value;
+            const termVal = document.getElementById('termFilter').value;
+            let filtered = allScoreData;
+            if (yearVal !== 'all') {
+                filtered = filtered.filter(item => item.学年 === yearVal);
+            }
+            if (termVal !== 'all') {
+                filtered = filtered.filter(item => String(item.学期) === termVal);
+            }
+            renderTable(filtered);
+        }
+
+        // 导出 Excel
+        function exportTableToExcel() {
+            const table = document.getElementById('scoreTable');
+            const wb = XLSX.utils.book_new();
+            const ws = XLSX.utils.table_to_sheet(table);
+            XLSX.utils.book_append_sheet(wb, ws, "成绩表");
+            XLSX.writeFile(wb, "周昊阳_成绩表.xlsx");
+        }
+
+        // 登出
         function logout() {
             document.getElementById('scoreContainer').style.display = 'none';
             document.getElementById('loginContainer').style.display = 'flex';
             document.getElementById('username').value = '';
             document.getElementById('password').value = '';
             document.getElementById('errorMessage').textContent = '';
-            document.getElementById('username').focus();
         }
-        
-        // 导出Excel功能
-        function exportTableToExcel() {
-            var wb = XLSX.utils.book_new();
-            var table = document.querySelector("table");
-            var ws = XLSX.utils.table_to_sheet(table);
-            XLSX.utils.book_append_sheet(wb, ws, "成绩表");
-            XLSX.writeFile(wb, "周昊阳_成绩表.xlsx");
-        }
-        
-        // 页面加载时自动填充测试账号
+
+        // 登录逻辑
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMessage');
+
+            if (username === '23080420' && password === 'Momomom@12') {
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('scoreContainer').style.display = 'block';
+                // 默认显示第二学期
+                const defaultFiltered = allScoreData.filter(item => item.学年 === '2025-2026' && String(item.学期) === '2');
+                renderTable(defaultFiltered);
+                // 设置下拉框默认值
+                document.getElementById('yearFilter').value = '2025-2026';
+                document.getElementById('termFilter').value = '2';
+                errorMsg.textContent = '';
+            } else {
+                errorMsg.textContent = '学号或密码错误，请重新输入';
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+                const pwdInput = document.getElementById('password');
+                pwdInput.style.borderColor = '#e74c3c';
+                pwdInput.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.2)';
+                setTimeout(() => {
+                    pwdInput.style.borderColor = '#ddd';
+                    pwdInput.style.boxShadow = 'none';
+                }, 2000);
+            }
+        });
+
+        // 页面加载自动填充测试账号
         window.onload = function() {
             document.getElementById('username').value = '23080420';
             document.getElementById('password').value = 'Momomom@12';
-        }
+        };
     </script>
 </body>
 </html>
